@@ -52,24 +52,24 @@ module.exports = class test {
     }
 
     indexStart(matrix = []) {
-        const i1 = Math.floor(Math.random() * this.x_axis.length)
-        const i2 = Math.floor(Math.random() * this.y_axis.length)
-        const sort = [i1, i2]
-        let equal = 0
+        const i1 = Math.floor(Math.random() * this.x_axis.length);
+        const i2 = Math.floor(Math.random() * this.y_axis.length);
+        const sort = [i1, i2];
+        let equal = 0;
         for (let i = 0; i < matrix.length; i++) {
-            const temp = matrix[i]
-            if ((temp[0] == sort[0]) && (temp[1] == sort[1])) equal++
+            const temp = matrix[i];
+            if ((temp[0] == sort[0]) && (temp[1] == sort[1])) equal++;
         }
         if (equal > 0) {
             if (this.calls < 10) {
-                this.indexStart(matrix)
-                this.calls++
+                this.indexStart(matrix);
+                this.calls++;
             } else {
-                this.calls = 0
+                this.calls = 0;
             }
         } else {
-            this.ID1 = this.i1
-            this.ID2 = this.i2
+            this.ID1 = i1;
+            this.ID2 = i2;
         }
     }
 
